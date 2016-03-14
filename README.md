@@ -65,3 +65,25 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 <span am-single="info.user.age>5?真:假"></span>
 <!--真-->
 ```
+
+<h3>双向绑定</h3>
+
+>基本用法
+
+```html
+<input value="" am-bind="info.user.name" />
+```
+
+>maxlength约束
+
+```html
+<input value="" am-bind="info.user.name" maxlength="6" />
+<!--maxlength属性也能用于其他元素，也可以用于单向绑定，例如下面的-->
+<span am-single="info.user.name" maxlength="6"></span>
+```
+
+>select元素
+
+```html
+<input value="" am-bind="info.user.name" maxlength="6" />
+```

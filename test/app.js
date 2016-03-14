@@ -1,7 +1,7 @@
 var angular = new angular_mobile();
 var info = {
 	user: {
-		name: "hjd",
+		name: "hu jin di",
 		title: 'qd',
 		desc: 'ms',
 		selected: "2",
