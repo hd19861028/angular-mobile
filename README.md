@@ -1,6 +1,6 @@
 # angular-mobile
 
-angular-mobile是根据angular班门弄斧捣鼓出来的
+angular-mobile是根据angular班门弄斧捣鼓出来的，其大小仅有2.35k(gzip之后)
 
 <h3>起因</h3>
 
