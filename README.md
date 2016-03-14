@@ -100,6 +100,13 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 >数组绑定
 
 ```html
+<!--
+var info = {
+	……
+	users: [{name:'hjd', age:18},{name:'zj', age:16}],
+	testarray: ['a','b','c','d','e']
+}
+-->
 <!--对于数组，{{$index}}表示索引，{{$v}}表示当前item的值-->
 <ul am-repeat="info.testarray" am-hide="info.testarray">
 	<li>{{$index}}. {{$v}}</li>
