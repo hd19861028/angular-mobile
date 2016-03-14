@@ -88,9 +88,29 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 
 <!--info.user.selected=2-->
 <select am-bind="info.user.selected">
-		<option value="1">选项1</option>
-		<option value="2">选项2</option>
-		<option value="3">选项3</option>
+	<option value="1">选项1</option>
+	<option value="2">选项2</option>
+	<option value="3">选项3</option>
 </select>
 
+```
+
+<h3>列表数据绑定</h3>
+
+>数组绑定
+
+```html
+<!--对于数组，{{$index}}表示索引，{{$v}}表示当前item的值-->
+<ul am-repeat="info.testarray" am-hide="info.testarray">
+	<li>{{$index}}. {{$v}}</li>
+</ul>
+```
+
+>json数组绑定
+
+```html
+<!--{{$index}}属性只要是am-repeat就可以使用-->
+<ul am-repeat="info.users" am-hide="info.users">
+	<li>{{$index}}. 姓名：{{name}}，年龄：{{age}} </li>
+</ul>
 ```
