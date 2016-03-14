@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.msg {
+				color: red;
+			}
+		</style>
+		<script src="../lib/angular-mobile.js"></script>
+		<script src="app.js"></script>
+	</head>
+
+	<body>
+		<h1>单向绑定</h1>
+		<hr /> 表达式：{ { info.user.name } }
+		<br>值：{{ info.user.name }}
+		<hr /> 表达式：{ {info.user.age>5?真:假} }
+		<br> 值：{{info.user.age>5?真:假}}
+		<hr />表达式： { {info.user.age==5?真:假} }
+		<br>值：{{info.user.age==5?真:假}}
+		<hr /> 作为元素的属性绑定
+		<br> 表达式：&lt;a href="#id={ {info.user.age} }"&gt;id={ {info.user.age} }&lt;/a&gt;
+		<br>值：<a href="#id={{info.user.age}}">id={{info.user.age}}</a>
+		<hr />
+		<h3>am-single属性的单向绑定</h3>&lt;span am-single=&quot;info.user.age&gt;5?&#x771F;:&#x5047;&quot;&gt;&lt;/span&gt;
+		<br />值: <span am-single="info.user.age>5?真:假"></span>
+
+		<h1>双向绑定</h1>
+		<hr />
+		<h3>双向绑定基本用法</h3>&lt;input value=&quot;&quot; am-bind=&quot;info.user.name&quot; /&gt;
+		<br />值：
+		<input value="" am-bind="info.user.name" />
+		<hr />
+		<h3>使用maxlength属性限制结果长度</h3>&lt;input value=&quot;&quot; am-bind=&quot;info.user.name&quot; maxlength=&quot;2&quot; /&gt;
+		<br />值：
+		<input value="" am-bind="info.user.name" maxlength="2" />
+		<h5>解释</h5>
+		<div>当元素中加上<span class="msg">maxlength</span>属性之后，会自动截断绑定属性的值</div>
+		<div>注意：该属性不仅仅对input元素有用，对其他元素，比如div，span，p同样有用</div>
+		<hr />
+		<h3>作用于select元素时</h3>
+		<pre>
+&lt;select am-bind=&quot;info.user.selected&quot;&gt;
+	&lt;option value=&quot;1&quot; tag=&quot;{ {info.user.name}}&quot;&gt;&#x9009;&#x9879;1&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;&#x9009;&#x9879;2{ {info.user.name}}&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;&#x9009;&#x9879;3&lt;/option&gt;
+&lt;/select&gt;
+</pre> 值：
+		<select am-bind="info.user.selected">
+			<option value="1" tag="{{info.user.name}}">选项1</option>
+			<option value="2">选项2{{info.user.name}}</option>
+			<option value="3">选项3</option>
+		</select>
+		<hr />
+
+		<button onclick="submit()">提交</button>
+
+		<ul am-repeat="info.users" am-hide="info.users">
+			<li>{{$index}}. 姓名：{{name}}，年龄：{{age}} <font am-bind="info.user.title"></font></li>
+		</ul>
+		<ul am-repeat="info.testarray" am-hide="info.testarray">
+			<li>{{$index}}. {{$v}}</li>
+		</ul>
+		<button id="btn" onclick="add(100)">确定增加100条</button>
+		<div tag="{{info.user.name}}">
+			<div tag="{{info.user.name}}">
+				<div tag="{{info.user.name}}">
+					<div>
+						{{info.user.name}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+		<br />
+		<img height='75' am-src="{{info.src}}" />
+
+	</body>
+
+</html>
