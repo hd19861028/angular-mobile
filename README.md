@@ -62,4 +62,6 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 ```html
 <a href="#id={{info.user.age}}">id={{info.user.age}}</a>
 <!--id=29-->
+<span am-single="info.user.age>5?真:假"></span>
+<!--真-->
 ```
