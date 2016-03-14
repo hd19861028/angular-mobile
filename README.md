@@ -18,7 +18,7 @@ var info = {
 		title: '系统架构师',
 		desc: '拥有8年web开发经验',
 		selected: "2",
-		age:5
+		age:29
 	},
 	users: [{name:'hjd', age:18},{name:'zj', age:16}],
 	testarray: ['a','b','c','d','e'],
@@ -46,4 +46,13 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 })
 ```
 
+<h3>单向绑定</h3>
 
+>表达式绑定
+
+```html
+{{ info.user.name }}   
+<!--hu jin di-->
+{{info.user.age>18?真:假}} 
+<!--真-->
+```
