@@ -56,3 +56,10 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 {{info.user.age>18?真:假}} 
 <!--真-->
 ```
+
+>属性绑定
+
+```html
+<a href="#id={{info.user.age}}">id={{info.user.age}}</a>
+<!--id=29-->
+```
