@@ -85,5 +85,12 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 >select元素
 
 ```html
-<input value="" am-bind="info.user.name" maxlength="6" />
+
+<!--info.user.selected=2-->
+<select am-bind="info.user.selected">
+		<option value="1">选项1</option>
+		<option value="2">选项2</option>
+		<option value="3">选项3</option>
+</select>
+
 ```
