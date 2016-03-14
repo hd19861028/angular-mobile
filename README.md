@@ -108,7 +108,7 @@ var info = {
 }
 -->
 <!--对于数组，{{$index}}表示索引，{{$v}}表示当前item的值-->
-<ul am-repeat="info.testarray" am-hide="info.testarray">
+<ul am-repeat="info.testarray">
 	<li>{{$index}}. {{$v}}</li>
 </ul>
 ```
@@ -117,7 +117,33 @@ var info = {
 
 ```html
 <!--{{$index}}属性只要是am-repeat就可以使用-->
-<ul am-repeat="info.users" am-hide="info.users">
+<ul am-repeat="info.users" >
 	<li>{{$index}}. 姓名：{{name}}，年龄：{{age}} </li>
 </ul>
+```
+
+<h3>图片懒加载</h3>
+
+>示例
+
+```html
+<!--每个图片都要设置一个高度，否则懒加载是无效的！-->
+<img height='75' am-src="{{info.src}}" />
+<br />
+……
+<img height='75' am-src="{{info.src}}" />
+<br />
+```
+
+<h3>元素自动隐藏</h3>
+
+>有时候一个属性没有值，我们需要自动将该元素隐藏掉
+
+```html
+<!--作用于数组类型的字段-->
+<ul am-repeat="info.testarray" am-hide="info.testarray">
+	<li>{{$index}}. {{$v}}</li>
+</ul>
+<!--作用于文本类型的字段-->
+<input value="" am-hide="info.user.name" />
 ```
