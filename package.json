@@ -1,17 +1,28 @@
 {
-	"name": "angular-mobile",
-	"version": "1.0.0",
-	"description": "it's a tiny library for angular.",
-	"repository": {
-		"url": "https://github.com/hd19861028/angular-mobile.git"
-	},
-	"main": "",
-	"author": {
-		"email": "282642547@qq.com",
-		"name": "Mars Hu"
-	},
-	"keywords": [
-		"angular-mobile"
-	],
-	"license": "HuJindi"
+  "name": "angular-mobile",
+  "version": "1.0.0",
+  "description": "it's a tiny library for angular.",
+  "repository": {
+    "url": "https://github.com/hd19861028/angular-mobile.git"
+  },
+  "main": "",
+  "author": {
+    "email": "282642547@qq.com",
+    "name": "Mars Hu"
+  },
+  "keywords": [
+    "angular-mobile"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.7",
+    "karma-opera-launcher": "^0.3.0",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-safari-launcher": "^0.1.1"
+  }
 }
