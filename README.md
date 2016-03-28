@@ -122,6 +122,46 @@ var info = {
 </ul>
 ```
 
+>子列表绑定
+
+```javascript
+var info = {
+	users: [{
+		name: 'hjd',
+		age: 18,
+		titles: [{
+			titlename: 'TL',
+			titledesc: 'team leader'
+		}, {
+			titlename: 'SA',
+			titledesc: 'System Asnysdf'
+		}]
+	}, {
+		name: 'zj',
+		age: 16,
+		titles: [{
+			titlename: 'LP',
+			titledesc: 'my wife'
+		}, {
+			titlename: 'W',
+			titledesc: 'women'
+		}]
+	}]
+}
+```
+```html
+<!--1. {{$index}}属性只能作用于顶层列表，子列表不支持该属性-->
+<!--2. 子列表绑定不支持普通数组，只能用于json数组-->
+<ul am-repeat="info.users">
+	<li>
+		{{$index}}. 姓名：{{name}}，年龄：{{age}}
+		<div am-repeat="info.users.titles">
+			<p>职位：{{titlename}}，描述：{{titledesc}}</p>
+		</div>
+	</li>
+</ul>
+```
+
 <h3>图片懒加载</h3>
 
 >示例
