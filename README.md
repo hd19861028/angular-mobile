@@ -202,7 +202,6 @@ var info = {
 <img src="/img/source/logo/{{info.user.logo}}.jpg" />
 <!--正确的方式-->
 <img am-src="/img/source/logo/{{info.user.logo}}.jpg" />
-<br />
 ```
 
 <h3>元素自动隐藏</h3>
