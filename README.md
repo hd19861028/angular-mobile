@@ -46,6 +46,22 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 })
 ```
 
+<h3>注意事项</h3>
+
+>事件的绑定请在set方法回调函数中执行，算是这个插件的瑕疵
+
+```javascript
+	
+	function bindEvent(){
+		//要先off，然后on
+		$(foo).off('click');
+		$(foo).on('click', function(){});
+	}
+	
+	angular.set('info', info, bindEvent);
+
+```
+
 <h3>单向绑定</h3>
 
 >表达式绑定
@@ -177,6 +193,18 @@ var info = {
 <br />
 ```
 
+<h3>am-src的其他用途</h3>
+
+>如果某个图片的src属性中包含了表达式{{}}，那么这个src属性必须使用am-src来使它延迟加载
+
+```html
+<!--错误的方式-->
+<img src="/img/source/logo/{{info.user.logo}}.jpg" />
+<!--正确的方式-->
+<img am-src="/img/source/logo/{{info.user.logo}}.jpg" />
+<br />
+```
+
 <h3>元素自动隐藏</h3>
 
 >有时候一个属性没有值，我们需要自动将该元素隐藏掉
@@ -188,4 +216,10 @@ var info = {
 </ul>
 <!--作用于文本类型的字段-->
 <input value="" am-hide="info.user.name" />
+```
+
+>支持对属性值取反"!"
+
+```html
+<input am-hide="!info.user.name" />
 ```
