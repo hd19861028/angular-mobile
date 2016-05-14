@@ -26,7 +26,9 @@ var info = {
 }
 
 //赋值并启动
-angular.set('info', info);
+angular.set('info', info, function(){
+	//绑定数据完成时执行的回调函数
+});
 //在点击事件中如此便可以成功抓取用户的所有修改过的值
 var result = angular.get('info');
 ```
@@ -39,7 +41,9 @@ define(['domready', 'zepto', 'common', 'angular'], function(doc, $, c, angular) 
 	doc(function() {
 		var info = {};
 		//赋值并启动
-		angular.set('info', info);
+		angular.set('info', info, function(){
+			//绑定数据完成时执行的回调函数
+		});
 		//在点击事件中如此便可以成功抓取用户的所有修改过的值
 		var result = angular.get('info');
 	})
